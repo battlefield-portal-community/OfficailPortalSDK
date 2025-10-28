@@ -16,6 +16,7 @@ mono_crash.*.json
 
 
 ### SDK SPECIFIC
+python/
 *.exe
 ### keep gdconverter build
 !SDK/deps/gdconverter/bin/export_tscn.exe

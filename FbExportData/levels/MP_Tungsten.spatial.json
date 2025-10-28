@@ -1,0 +1,53 @@
+{
+  "Portal_Dynamic": [],
+  "Static": [
+    {
+      "name": "MP_Tungsten_Terrain",
+      "type": "MP_Tungsten_Terrain",
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "front": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "name": "MP_Tungsten_Assets",
+      "type": "MP_Tungsten_Assets",
+      "right": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "up": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "front": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ]
+}
