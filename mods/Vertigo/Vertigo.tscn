@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://6eo7txkns802"]
 
 [ext_resource type="PackedScene" path="res://static/MP_Capstone_Terrain.tscn" id="1_vldqk"]
-[ext_resource type="PackedScene" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
 [ext_resource type="PackedScene" path="res://static/MP_Capstone_Assets.tscn" id="2_edn71"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="3_xix7g"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="4_1hms6"]
@@ -41,8 +41,8 @@
 [ext_resource type="PackedScene" path="res://objects/Tajikistan/MP_Capstone/Uncategorized/Hescoline_04.tscn" id="40_2c1hu"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Generic/Military/Props/BarrierHesco_01_128x120.tscn" id="41_fhfs5"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/AreaTrigger.tscn" id="42_dv4e1"]
-[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Industrial/Architecture/ConstructionSetRebar_01_A_96x512x32.tscn" id="43_3yqtw"]
-[ext_resource type="PackedScene" path="res://addons/bf_portal/portal_tools/types/OBBVolume/OBBVolume.tscn" id="2_cjtf2"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Industrial/Architecture/ConstructionSetRebar_01_A_96x512x32.tscn" id="43_3yqtw"]
+[ext_resource type="PackedScene" uid="uid://cgsg770ai6g2x" path="res://addons/bf_portal/portal_tools/types/OBBVolume/OBBVolume.tscn" id="2_cjtf2"]
 
 [node name="MP_Capstone" type="Node3D"]
 

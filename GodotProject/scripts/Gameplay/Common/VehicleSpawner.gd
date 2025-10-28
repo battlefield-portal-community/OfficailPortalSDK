@@ -5,7 +5,7 @@ extends Node3D
 @export var DisableRespawn = false
 @export var ObjId = 0
 
-enum VehicleType_selection {Abrams, Leopard, Cheetah, CV90, Gepard, UH60, Eurocopter, AH64, Vector, Quadbike, Flyer60, JAS39, F22, F16, M2Bradley, SU57}
+enum VehicleType_selection {Abrams, Leopard, Cheetah, CV90, Gepard, UH60, Eurocopter, AH64, Vector, Quadbike, GolfCart, Marauder, Flyer60, JAS39, F22, F16, M2Bradley, SU57, UH60_Pax, Marauder_Pax}
 @export var VehicleType: VehicleType_selection = VehicleType_selection.Abrams
 
 @export var P_AutoSpawnEnabled = false

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0dkemsqqkwly"]
+[gd_scene load_steps=8 format=3 uid="uid://d0dkemsqqkwly"]
 
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_4gqfe"]
-[ext_resource type="PackedScene" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
 [ext_resource type="PackedScene" path="res://objects/entities/SpawnPoint.tscn" id="3_ggxu6"]
 [ext_resource type="PackedScene" path="res://static/MP_Limestone_Terrain.tscn" id="4_gb1dn"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/CombatArea.tscn" id="4_owl2c"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="5_1kg5l"]
 [ext_resource type="PackedScene" path="res://static/MP_Limestone_Assets.tscn" id="5_owl2c"]
 
 [node name="MP_Limestone" type="Node3D"]
@@ -16,7 +17,7 @@ ObjId = 1
 HQArea = NodePath("HQ_Team1")
 InfantrySpawns = [NodePath("SpawnPoint_1_1"), NodePath("SpawnPoint_1_2"), NodePath("SpawnPoint_1_3"), NodePath("SpawnPoint_1_4")]
 
-[node name="HQ_Team1" instance=ExtResource("2_cjtf1") parent="TEAM_1_HQ"]
+[node name="HQ_Team1" parent="TEAM_1_HQ" instance=ExtResource("2_cjtf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
 
@@ -40,7 +41,7 @@ ObjId = 2
 HQArea = NodePath("HQ_Team2")
 InfantrySpawns = [NodePath("SpawnPoint_2_1"), NodePath("SpawnPoint_2_2"), NodePath("SpawnPoint_2_3"), NodePath("SpawnPoint_2_4")]
 
-[node name="HQ_Team2" instance=ExtResource("2_cjtf1") parent="TEAM_2_HQ"]
+[node name="HQ_Team2" parent="TEAM_2_HQ" instance=ExtResource("2_cjtf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
 
@@ -58,15 +59,22 @@ transform = Transform3D(-0.165771, 0, -0.986164, 0, 1, 0, 0.986164, 0, -0.165771
 
 [node name="CombatArea" parent="." node_paths=PackedStringArray("CombatVolume") instance=ExtResource("4_owl2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 283.651, 93.4144, 133.42)
-CombatVolume = NodePath("CollisionPolygon3D")
+CombatVolume = NodePath("CombatVolume")
 
-[node name="CollisionPolygon3D" instance=ExtResource("2_cjtf1") parent="CombatArea"]
+[node name="CombatVolume" parent="CombatArea" instance=ExtResource("2_cjtf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.825, 134.381, -100.438)
-height = 100.0
 points = PackedVector2Array(-113.001, 13.632, -126.388, 16.5877, -125.693, 29.2813, -119.434, 29.1944, -130.316, 45.9834, -142.4, 48.3965, -143.182, 60.3065, -152.2, 56.5601, -159.265, 74.6505, -147.729, 79.2728, -142.999, 88.7345, -149.975, 92.1832, -146.409, 99.3151, -134.848, 122.797, -120.51, 119.173, -121.785, 111.566, -112.585, 108.938, -112.306, 125.187, -99.1067, 124.942, -99.5448, 109.13, -97.4701, 109.174, -64.6928, 109.413, -56.2496, 114.351, -43.5847, 116.382, -42.8281, 112.599, -37.858, 111.202, -31.222, 105.198, -30.0844, 107.284, -18.6945, 102.069, -21.0113, 94.7157, -23.1619, 89.4586, -15.9533, 86.153, -19.1246, 76.3444, 7.82578, 56.8842, 1.6756, 46.5945, -3.64667, 49.433, -6.72174, 44.4656, -13.4633, 48.96, -15.8287, 45.4118, -19.1404, 47.4224, -24.7834, 33.8876, -39.331, 14.1361, -48.7928, 22.0603, -51.7496, 22.4152, -50.8034, 13.0716, -58.547, 12.7467, -74.144, 12.5321, -105.318, 12.7738)
+height = 100.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.101056, 0.994881, 0, -0.994881, 0.101056, 318.778, 350.707, 78.8819)
+
+[node name="DeployCam" parent="Camera3D" instance=ExtResource("5_1kg5l")]
 
 [node name="Static" type="Node3D" parent="."]
 
 [node name="MP_Limestone_Terrain" parent="Static" instance=ExtResource("4_gb1dn")]
+metadata/_edit_lock_ = true
 
 [node name="MP_Limestone_Assets" parent="Static" instance=ExtResource("5_owl2c")]
+metadata/_edit_lock_ = true

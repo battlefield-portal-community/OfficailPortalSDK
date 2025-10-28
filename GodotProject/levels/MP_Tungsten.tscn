@@ -1,27 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://6i4bq4jdbto1"]
+[gd_scene load_steps=8 format=3 uid="uid://6i4bq4jdbto1"]
 
 [ext_resource type="PackedScene" path="res://static/MP_Tungsten_Terrain.tscn" id="1_qj2i4"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_xpspq"]
 [ext_resource type="PackedScene" path="res://objects/entities/SpawnPoint.tscn" id="2_33chp"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
 [ext_resource type="PackedScene" path="res://static/MP_Tungsten_Assets.tscn" id="2_ifhy4"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/CombatArea.tscn" id="3_bns7u"]
-[ext_resource type="PackedScene" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="5_1imjp"]
 
 [node name="MP_Tungsten" type="Node3D"]
-
-[node name="CombatArea" parent="." node_paths=PackedStringArray("CombatVolume") instance=ExtResource("3_bns7u")]
-CombatVolume = NodePath("CollisionPolygon3D")
-
-[node name="CollisionPolygon3D" instance=ExtResource("2_cjtf1") parent="CombatArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 472.271, 140.862, 307.146)
-height = 100.0
-points = PackedVector2Array(-702.802, -979.061, -843.403, -971.404, -1030.46, -937.497, -1122.94, -799.005, -1111.45, -682.545, -1104.19, -509.563, -1072.48, -188.984, -830.725, -175.347, -667.134, -196.858, -597.728, -188.523, -546.841, -153.427, -449.941, -146.837, -376.636, -152.327, -294.136, -155.606, -212.896, -161.719, -125.098, -172.376, -58.8558, -176.36, 113.226, -171.032, 313.616, -172.791, 327.508, -313.767, 323.584, -511.305, 329.415, -749.487, 305.962, -944.735, 65.5888, -987.657, -190.707, -1008.46, -332.326, -964.644, -429.412, -984.965, -545.701, -993.851)
-
-[node name="Static" type="Node3D" parent="."]
-
-[node name="MP_Tungsten_Terrain" parent="Static" instance=ExtResource("1_qj2i4")]
-
-[node name="MP_Tungsten_Assets" parent="Static" instance=ExtResource("2_ifhy4")]
 
 [node name="TEAM_1_HQ" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_xpspq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.7894, 88.6247, -253.421)
@@ -30,7 +17,7 @@ ObjId = 1
 HQArea = NodePath("HQ_Team1")
 InfantrySpawns = [NodePath("SpawnPoint_1_1"), NodePath("SpawnPoint_1_2"), NodePath("SpawnPoint_1_3"), NodePath("SpawnPoint_1_4")]
 
-[node name="HQ_Team1" instance=ExtResource("2_cjtf1") parent="TEAM_1_HQ"]
+[node name="HQ_Team1" parent="TEAM_1_HQ" instance=ExtResource("2_cjtf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
 
@@ -54,7 +41,7 @@ ObjId = 2
 HQArea = NodePath("HQ_Team2")
 InfantrySpawns = [NodePath("SpawnPoint_2_1"), NodePath("SpawnPoint_2_2"), NodePath("SpawnPoint_2_3"), NodePath("SpawnPoint_2_4")]
 
-[node name="HQ_Team2" instance=ExtResource("2_cjtf1") parent="TEAM_2_HQ"]
+[node name="HQ_Team2" parent="TEAM_2_HQ" instance=ExtResource("2_cjtf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
 
@@ -69,3 +56,24 @@ transform = Transform3D(0.162758, 0, 0.986666, 0, 1, 0, -0.986666, 0, 0.162758, 
 
 [node name="SpawnPoint_2_4" parent="TEAM_2_HQ" instance=ExtResource("2_33chp")]
 transform = Transform3D(-0.165771, 0, -0.986164, 0, 1, 0, 0.986164, 0, -0.165771, 0, 0, 3)
+
+[node name="CombatArea" parent="." node_paths=PackedStringArray("CombatVolume") instance=ExtResource("3_bns7u")]
+CombatVolume = NodePath("CombatVolume")
+
+[node name="CombatVolume" parent="CombatArea" instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 472.271, 140.862, 307.146)
+points = PackedVector2Array(-702.802, -979.061, -843.403, -971.404, -1030.46, -937.497, -1122.94, -799.005, -1111.45, -682.545, -1104.19, -509.563, -1072.48, -188.984, -830.725, -175.347, -667.134, -196.858, -597.728, -188.523, -546.841, -153.427, -449.941, -146.837, -376.636, -152.327, -294.136, -155.606, -212.896, -161.719, -125.098, -172.376, -58.8558, -176.36, 113.226, -171.032, 313.616, -172.791, 327.508, -313.767, 323.584, -511.305, 329.415, -749.487, 305.962, -944.735, 65.5888, -987.657, -190.707, -1008.46, -332.326, -964.644, -429.412, -984.965, -545.701, -993.851)
+height = 100.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.101056, 0.994881, 0, -0.994881, 0.101056, -15.5236, 408.54, -265.293)
+
+[node name="DeployCam" parent="Camera3D" instance=ExtResource("5_1imjp")]
+
+[node name="Static" type="Node3D" parent="."]
+
+[node name="MP_Tungsten_Terrain" parent="Static" instance=ExtResource("1_qj2i4")]
+metadata/_edit_lock_ = true
+
+[node name="MP_Tungsten_Assets" parent="Static" instance=ExtResource("2_ifhy4")]
+metadata/_edit_lock_ = true

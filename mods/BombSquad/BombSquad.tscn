@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" path="res://objects/Shared/Generic/Military/Architecture/PalletWoodenCrate_01.tscn" id="18_tml6e"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Generic/Military/Architecture/PalletWoodenCrate_02.tscn" id="19_u2fln"]
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Military/Props/CrateAmmo_01_StackB.tscn" id="20_27dm0"]
-[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/BarrelOil_01_A.tscn" id="21_27dqd"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Common/Props/BarrelOil_01_A.tscn" id="21_27dqd"]
 [ext_resource type="PackedScene" path="res://objects/Tajikistan/MP_Capstone/Architecture/FoundationStairs_01_256x256_A.tscn" id="22_vbr1o"]
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Industrial/Props/CinderblockStack_01_B_180.tscn" id="23_hbdsh"]
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Industrial/Props/CinderblockStack_01_A_120.tscn" id="24_8g3nc"]
@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" path="res://objects/Tajikistan/Shared/Generic/Common/Props/Woodpile_01.tscn" id="44_xy5u4"]
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Military/Props/WeaponCase_Pistol_01.tscn" id="45_2cnbt"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Generic/Industrial/Props/PlywoodBoards_01.tscn" id="46_d10f2"]
-[ext_resource type="PackedScene" path="res://objects/Tajikistan/Shared/Generic/Common/Props/BarrelOilExplosive_01_DDPF_B.tscn" id="47_40f50"]
+[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/BarrelOilExplosive_01_DDPF_B.tscn" id="47_40f50"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Props/SnacksMetalShe02.tscn" id="48_e0yxe"]
 [ext_resource type="PackedScene" path="res://objects/Global/Props/CrateMetal_01_B.tscn" id="49_vbbe8"]
 [ext_resource type="PackedScene" path="res://objects/Global/Props/Crate_01_A.tscn" id="50_7ex8c"]
@@ -60,8 +60,9 @@
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Common/Props/ServerRack_01.tscn" id="59_7exa8"]
 [ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="60_s1a1b"]
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Industrial/Props/ContainerStandard_01_1280.tscn" id="61_1ss2u"]
-[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Industrial/Architecture/ConstructionSetRebar_01_A_96x512x32.tscn" id="62_bimsd"]
-[ext_resource type="PackedScene" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Industrial/Architecture/ConstructionSetRebar_01_A_96x512x32.tscn" id="62_bimsd"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
+
 
 [node name="MP_Capstone" type="Node3D"]
 

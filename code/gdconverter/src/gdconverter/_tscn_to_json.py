@@ -113,14 +113,16 @@ def _create_layers(scene: ttype.Scene, assets: jstype.Assets) -> None:
         if "name" not in node:
             _logging.log_error('Node is missing "name" attribute: ' + str(node))
             continue
+        name = str(node["name"])
 
         if "parent" not in node:
             continue  # level root
 
-        root_parent = str(node["parent"]).split("/")[0]
-        if root_parent == "Static":
-            layers["Static"].append(node)
-            continue
+        parents = str(node["parent"]).split("/")
+        if parents[0] == "Static":
+            if len(parents) == 1 and name.endswith(("_Terrain", "_Assets")):
+                layers["Static"].append(node)
+            continue  # skip any non-direct child of Static layer that isn't a level asset
 
         if str(node["type"]).lower() not in assets:
             continue  # empty node

@@ -1,5 +1,5 @@
 // === acePursuit.ts ===
-const VERSION = [1, 8, 239];
+const VERSION = [2, 10, 245];
 
 
 
@@ -497,10 +497,13 @@ class TrackData {
             mod.GetVehicleSpawner(12),
             mod.GetVehicleSpawner(13),
             mod.GetVehicleSpawner(14),
+            mod.GetVehicleSpawner(15),
+            mod.GetVehicleSpawner(16),
         ]
 
 
         for (let index = 0; index < vehicArray.length; index++) {
+            mod.SetVehicleSpawnerVehicleType(vehicArray[index], mod.VehicleList.Cheetah)
             mod.ForceVehicleSpawnerSpawn(vehicArray[index])
             await mod.Wait(0.1)
         }
@@ -520,6 +523,8 @@ class TrackData {
             mod.GetSpawner(12),
             mod.GetSpawner(13),
             mod.GetSpawner(14),
+            mod.GetSpawner(15),
+            mod.GetSpawner(16),
         ]
 
         for (let index = 0; index < aiArray.length; index++) {

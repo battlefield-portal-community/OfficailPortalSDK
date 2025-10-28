@@ -54,7 +54,7 @@
 [ext_resource type="PackedScene" path="res://objects/Shared/Generic/Industrial/Props/ContainerStandardOpen_01_640_D.tscn" id="56_47g83"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Nature/CliffHuge_08B_B.tscn" id="56_yuuyf"]
 [ext_resource type="PackedScene" path="res://objects/Shared/Uncategorized/GM1083CargoTruck_01_Canopy.tscn" id="57_aetfl"]
-[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Industrial/Architecture/ConstructionSetRebar_01_A_96x512x32.tscn" id="59_6jblg"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Industrial/Architecture/ConstructionSetRebar_01_A_96x512x32_Destructible.tscn" id="59_6jblg"]
 [ext_resource type="PackedScene" path="res://objects/Tajikistan/MP_Capstone/Generic/Common/Nature/OliveRussian_01_L_B.tscn" id="60_mcfln"]
 [ext_resource type="PackedScene" path="res://objects/Global/Generic/Common/Architecture/HighwayOverpass_Bridge_01.tscn" id="61_thyg2"]
 [ext_resource type="PackedScene" path="res://objects/Tajikistan/Shared/Generic/Common/Nature/OliveRussian_01_M.tscn" id="61_vk3jw"]
@@ -2238,12 +2238,18 @@ transform = Transform3D(2.46589, 0, -3.14951, 0, 4, 0, 3.14951, 0, 2.46589, 5406
 
 [node name="VehicleSpawner" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1579.57, 273.474, 1358.99)
+ObjId = 1
+VehicleType = 2
 
 [node name="VehicleSpawner2" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1541.44, 273.474, 1428.68)
+ObjId = 2
+VehicleType = 2
 
 [node name="VehicleSpawner3" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1501.99, 273.474, 1499.96)
+ObjId = 3
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner2" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1580.91, 272.9, 1354.23)
@@ -2286,6 +2292,8 @@ ObjId = 6
 
 [node name="VehicleSpawner4" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5324.29, 307.998, 4045.16)
+ObjId = 4
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner8" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5297.16, 309.027, 3955.27)
@@ -2293,6 +2301,8 @@ ObjId = 7
 
 [node name="VehicleSpawner7" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5293.18, 312.498, 3955.42)
+ObjId = 5
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner9" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5223.1, 309.027, 3895.86)
@@ -2300,12 +2310,18 @@ ObjId = 8
 
 [node name="VehicleSpawner8" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5219.11, 312.498, 3896.01)
+ObjId = 6
+VehicleType = 2
 
 [node name="VehicleSpawner5" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5138.3, 307.669, 4239.84)
+ObjId = 7
+VehicleType = 2
 
 [node name="VehicleSpawner6" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5255.05, 307.511, 4115.85)
+ObjId = 8
+VehicleType = 2
 
 [node name="Node3D2" type="Node3D" parent="."]
 
@@ -2371,42 +2387,52 @@ transform = Transform3D(0.0205933, 0, -0.999788, 0, 1, 0, 0.999788, 0, 0.0205933
 
 [node name="ModBuilder_GruntSpawner10" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3902.91, 239.855, 2956.12)
-ObjId = 7
+ObjId = 9
 
 [node name="ModBuilder_GruntSpawner11" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3950.94, 239.304, 2903.3)
-ObjId = 8
+ObjId = 10
 
 [node name="VehicleSpawner9" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3906.31, 240.612, 2956.98)
+ObjId = 9
+VehicleType = 2
 
 [node name="VehicleSpawner10" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3950.92, 240.074, 2898)
+ObjId = 10
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner12" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4306.84, 240.205, 3300.74)
-ObjId = 9
+ObjId = 11
 
 [node name="VehicleSpawner11" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2861.67, 962.464, 0.0164084)
+ObjId = 11
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner13" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2859.6, 961.588, 2.65797)
-ObjId = 10
+ObjId = 13
 
 [node name="VehicleSpawner12" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2943.38, 679.723, 985.041)
+ObjId = 12
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner14" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2941.31, 678.847, 987.683)
-ObjId = 11
+ObjId = 14
 
 [node name="VehicleSpawner13" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2441.84, 515.065, 238.973)
+ObjId = 13
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner15" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2443.99, 515.191, 239.137)
-ObjId = 12
+ObjId = 15
 
 [node name="Portal_CAS_CliffHuge_20" parent="." instance=ExtResource("36_s6kgy")]
 transform = Transform3D(10.9857, 4.79306, -0.584414, -2.15283, 6.16204, 10.0695, 4.32207, -9.11349, 6.50107, -3200.5, 532.288, 1268.92)
@@ -2431,20 +2457,26 @@ transform = Transform3D(3.87969, -0.934349, 0.273803, 0.416441, 2.60922, 3.00309
 
 [node name="VehicleSpawner14" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4305.66, 242.343, 3303.49)
+ObjId = 14
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner16" parent="." instance=ExtResource("13_v82r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4104.97, 268.059, 3090.41)
-ObjId = 13
+ObjId = 16
 
 [node name="VehicleSpawner15" parent="." instance=ExtResource("32_gmpy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4101.56, 268.544, 3093.62)
+ObjId = 15
+VehicleType = 2
 
 [node name="VehicleSpawner16" parent="." instance=ExtResource("32_gmpy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5016.23, 568.843, 2906.18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5017.83, 577.612, 2899.32)
+ObjId = 16
+VehicleType = 2
 
 [node name="ModBuilder_GruntSpawner17" parent="." instance=ExtResource("13_v82r2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5014.92, 567.453, 2906.92)
-ObjId = 14
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5016.52, 576.222, 2899.72)
+ObjId = 17
 
 [node name="CliffHuge_02" parent="." instance=ExtResource("33_axqae")]
 transform = Transform3D(0.91113, 0, -0.412119, 0, 1, 0, 0.412119, 0, 0.91113, 943.048, 50.2823, 780.237)

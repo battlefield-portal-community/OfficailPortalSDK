@@ -11,6 +11,12 @@
         },
         "theater": "Brooklyn"
     },
+    "MP_Badlands": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "SouthernCalifornia"
+    },
     "MP_Battery": {
         "budget": {
             "physicsCostMax": 100000
@@ -52,5 +58,17 @@
             "physicsCostMax": 100000
         },
         "theater": "Tajikistan"
+    },
+    "MP_Granite_ClubHouse_Portal": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "SouthernCalifornia"
+    },
+    "MP_Granite_TechCampus_Portal": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "SouthernCalifornia"
     }
 }
