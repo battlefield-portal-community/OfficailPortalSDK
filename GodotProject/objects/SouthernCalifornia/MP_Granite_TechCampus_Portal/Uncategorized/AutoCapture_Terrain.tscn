@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/AutoCapture_Terrain.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_TechCampus_Portal/Uncategorized/AutoCapture_Terrain.gd" type="Script" id="2"]
+
+
+[node name="AutoCapture_Terrain" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

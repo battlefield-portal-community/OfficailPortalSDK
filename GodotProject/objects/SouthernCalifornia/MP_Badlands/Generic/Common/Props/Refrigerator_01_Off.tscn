@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/Refrigerator_01_Off.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Badlands/Generic/Common/Props/Refrigerator_01_Off.gd" type="Script" id="2"]
+
+
+[node name="Refrigerator_01_Off" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

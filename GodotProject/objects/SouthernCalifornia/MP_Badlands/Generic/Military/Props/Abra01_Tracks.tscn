@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/Abra01_Tracks.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Badlands/Generic/Military/Props/Abra01_Tracks.gd" type="Script" id="2"]
+
+
+[node name="Abra01_Tracks" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

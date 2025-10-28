@@ -1,0 +1,2981 @@
+[gd_scene load_steps=32 format=3 uid="uid://dpvvum1woq2hg"]
+
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_veeal"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_cjtf1"]
+[ext_resource type="PackedScene" uid="uid://cgsg770ai6g2x" path="res://addons/bf_portal/portal_tools/types/OBBVolume/OBBVolume.tscn" id="2_cjtf2"]
+[ext_resource type="PackedScene" path="res://objects/entities/SpawnPoint.tscn" id="3_l14eh"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/PlayerSpawner.tscn" id="4_u4lfc"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="4_v1g2w"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/CombatArea.tscn" id="5_c6pqq"]
+[ext_resource type="PackedScene" path="res://static/MP_Granite_MainStreet_Portal_Terrain.tscn" id="6_7aa52"]
+[ext_resource type="PackedScene" path="res://static/MP_Granite_MainStreet_Portal_Assets.tscn" id="7_25e01"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/AI/AI_Spawner.tscn" id="9_seyx6"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/BattleRoyale/RingOfFire.tscn" id="10_0qo24"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_Target_01.tscn" id="11_gii3i"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_MannequinRotation_02.tscn" id="12_ucjbd"]
+[ext_resource type="PackedScene" path="res://objects/Global/Architecture/FiringRange_Floor_01.tscn" id="13_af150"]
+[ext_resource type="PackedScene" path="res://objects/Global/Architecture/FiringRange_EndWall_01.tscn" id="15_fpd1i"]
+[ext_resource type="PackedScene" path="res://objects/Global/Architecture/FiringRange_Wall_1024_01.tscn" id="15_gii3i"]
+[ext_resource type="PackedScene" path="res://objects/Global/Architecture/FiringRange_Ceiling_02.tscn" id="16_gii3i"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_Mat_01.tscn" id="17_n6nmm"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_MannequinRotation_01.tscn" id="18_ucjbd"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_NumberFive_01.tscn" id="18_vqvvf"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_NumberOne_01.tscn" id="19_er6qu"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_Table_01.tscn" id="19_n6nmm"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_Divider_02.tscn" id="19_x0hvc"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_NumberZero_01.tscn" id="20_yq3pt"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRange_Railing_01.tscn" id="23_vqvvf"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/InteractPoint.tscn" id="24_er6qu"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/WorldIcon.tscn" id="25_yq3pt"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Common/Props/CrateWeapon_01.tscn" id="26_swivc"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/Crate_01_A.tscn" id="27_0qo24"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Military/Props/Crate_03_B.tscn" id="28_6cqx5"]
+[ext_resource type="PackedScene" path="res://objects/Global/Generic/Military/Props/CrateAmmo_01_StackD.tscn" id="29_uuliw"]
+
+[node name="MP_Granite_MainStreet_Portal" type="Node3D"]
+
+[node name="DeployCam2" parent="." instance=ExtResource("4_v1g2w")]
+transform = Transform3D(-0.229268, -0.943623, 0.238773, 0, 0.245307, 0.969445, -0.973364, 0.222263, -0.0562412, -1004.19, 376.297, 313.267)
+
+[node name="CombatArea" parent="." node_paths=PackedStringArray("CombatVolume") instance=ExtResource("5_c6pqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1038.58, 136.643, 306.875)
+CombatVolume = NodePath("CollisionPolygon3D")
+
+[node name="CollisionPolygon3D" parent="CombatArea" instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1587, 9.17712, -217.263)
+points = PackedVector2Array(-155.389, 66.3654, -155.221, 138.311, -159.77, 202.477, -143.535, 311.917, -93.5585, 412.775, -14.795, 514.716, 41.4855, 433.077, 55.6949, 397.199, 120.183, 267.861, 187.536, 131.712, -61.141, -45.7695, -135.873, 0.701385)
+height = 100.0
+
+[node name="Static" type="Node3D" parent="."]
+
+[node name="MP_Granite_MainStreet_Portal_Terrain" parent="Static" instance=ExtResource("6_7aa52")]
+
+[node name="MP_Granite_MainStreet_Portal_Assets" parent="Static" instance=ExtResource("7_25e01")]
+
+[node name="TEAM_1_HQ" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_veeal")]
+transform = Transform3D(0.999983, 0, -0.00589918, 0, 1, 0, 0.00589918, 0, 0.999983, -1021.91, 104.493, 349.132)
+AltTeam = 0
+ObjId = 1
+HQArea = NodePath("HQ_Team1")
+InfantrySpawns = [NodePath("SpawnPoint_1_1"), NodePath("SpawnPoint_1_2"), NodePath("SpawnPoint_1_3"), NodePath("SpawnPoint_1_4")]
+
+[node name="HQ_Team1" parent="TEAM_1_HQ" instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="ModBuilder_SpawnPoint" parent="TEAM_1_HQ" node_paths=PackedStringArray("Area", "SpawnPoints") instance=ExtResource("4_u4lfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103579, -0.294155, -1.75578)
+ObjId = 1
+Area = NodePath("../../CombatArea/CollisionPolygon3D")
+SpawnPoints = [NodePath("../SpawnPoint_1_1"), NodePath("../SpawnPoint_1_2"), NodePath("../SpawnPoint_1_3"), NodePath("../SpawnPoint_1_4")]
+
+[node name="SpawnPoint_1_1" parent="TEAM_1_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(0.999884, 0, -0.0152535, 0, 1, 0, 0.0152535, 0, 0.999884, 0, 0, -3.00003)
+
+[node name="SpawnPoint_1_2" parent="TEAM_1_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.9995, 0, -0.0316198, 0, 1, 0, 0.0316198, 0, -0.9995, 3, 0, 0)
+
+[node name="SpawnPoint_1_3" parent="TEAM_1_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.0428871, 0, 0.99908, 0, 1, 0, -0.99908, 0, -0.0428871, -2.21558, 0, -2.24182)
+
+[node name="SpawnPoint_1_4" parent="TEAM_1_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.678992, 0, 0.734145, 0, 1, 0, -0.734145, 0, -0.678992, -0.0561523, 0, 1.61374)
+
+[node name="TEAM_2_HQ" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_veeal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1020.87, 104.285, 322.676)
+Team = 2
+AltTeam = 0
+ObjId = 2
+HQArea = NodePath("HQ_Team2")
+InfantrySpawns = [NodePath("SpawnPoint_2_1"), NodePath("SpawnPoint_2_2"), NodePath("SpawnPoint_2_3"), NodePath("SpawnPoint_2_4")]
+
+[node name="HQ_Team2" parent="TEAM_2_HQ" instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="ModBuilder_SpawnPoint" parent="TEAM_2_HQ" node_paths=PackedStringArray("Area", "SpawnPoints") instance=ExtResource("4_u4lfc")]
+transform = Transform3D(1, 2.38419e-07, 0, 0, 0, -1, -2.38419e-07, 1, 0, 1.53493, 1.36453, -3.1595)
+ObjId = 2
+Area = NodePath("../../CombatArea/CollisionPolygon3D")
+SpawnPoints = [NodePath("../SpawnPoint_2_1"), NodePath("../SpawnPoint_2_2"), NodePath("../SpawnPoint_2_3"), NodePath("../SpawnPoint_2_4")]
+
+[node name="SpawnPoint_2_1" parent="TEAM_2_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(0.87795, 0, -0.478754, 0, 1, 0, 0.478754, 0, 0.87795, 0, 0, -3)
+
+[node name="SpawnPoint_2_2" parent="TEAM_2_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.997604, 0, 0.0691822, 0, 1, 0, -0.0691822, 0, -0.997604, 1.64429, 0, -1.13904)
+
+[node name="SpawnPoint_2_3" parent="TEAM_2_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(0.162758, 0, 0.986666, 0, 1, 0, -0.986666, 0, 0.162758, -2.78164, 0, -2.28688)
+
+[node name="SpawnPoint_2_4" parent="TEAM_2_HQ" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.468114, 0, 0.883668, 0, 1, 0, -0.883668, 0, -0.468114, -0.496582, 0, 2.61964)
+
+[node name="TEAM_1_HQ2" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_veeal")]
+transform = Transform3D(0.999983, 0, -0.00589918, 0, 1, 0, 0.00589918, 0, 0.999983, -1020.78, 104.493, 284.5)
+Team = 3
+AltTeam = 0
+ObjId = 3
+HQArea = NodePath("HQ_Team1")
+InfantrySpawns = [NodePath("SpawnPoint_1_1"), NodePath("SpawnPoint_1_2"), NodePath("SpawnPoint_1_3"), NodePath("SpawnPoint_1_4")]
+
+[node name="HQ_Team1" parent="TEAM_1_HQ2" instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="SpawnPoint_1_1" parent="TEAM_1_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(0.999884, 0, -0.0152535, 0, 1, 0, 0.0152535, 0, 0.999884, 0, 0, -3)
+
+[node name="SpawnPoint_1_2" parent="TEAM_1_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.9995, 0, -0.0316198, 0, 1, 0, 0.0316198, 0, -0.9995, 1.38977, 0, 0.00949097)
+
+[node name="SpawnPoint_1_3" parent="TEAM_1_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.0428871, 0, 0.99908, 0, 1, 0, -0.99908, 0, -0.0428871, -3.97903, 0, -2.2314)
+
+[node name="SpawnPoint_1_4" parent="TEAM_1_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.91472, 0, 0.404088, 0, 1, 0, -0.404088, 0, -0.91472, -1.70764, 0, 1.16763)
+
+[node name="ModBuilder_SpawnPoint" parent="TEAM_1_HQ2" node_paths=PackedStringArray("Area", "SpawnPoints") instance=ExtResource("4_u4lfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0118585, 0, -2.01016)
+ObjId = 3
+Area = NodePath("../../CombatArea/CollisionPolygon3D")
+SpawnPoints = [NodePath("../SpawnPoint_1_1"), NodePath("../SpawnPoint_1_2"), NodePath("../SpawnPoint_1_3"), NodePath("../SpawnPoint_1_4")]
+
+[node name="TEAM_2_HQ2" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_veeal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1023.43, 104.285, 253.585)
+Team = 4
+AltTeam = 0
+ObjId = 4
+HQArea = NodePath("HQ_Team2")
+InfantrySpawns = [NodePath("SpawnPoint_2_1"), NodePath("SpawnPoint_2_2"), NodePath("SpawnPoint_2_3"), NodePath("SpawnPoint_2_4")]
+
+[node name="HQ_Team2" parent="TEAM_2_HQ2" instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="SpawnPoint_2_1" parent="TEAM_2_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(0.87795, 0, -0.478754, 0, 1, 0, 0.478754, 0, 0.87795, 0, 0, -3)
+
+[node name="SpawnPoint_2_2" parent="TEAM_2_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.997604, 0, 0.0691822, 0, 1, 0, -0.0691822, 0, -0.997604, 3.5357, 0, -1.13904)
+
+[node name="SpawnPoint_2_3" parent="TEAM_2_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(0.162758, 0, 0.986666, 0, 1, 0, -0.986666, 0, 0.162758, -0.486328, 0, -1.35197)
+
+[node name="SpawnPoint_2_4" parent="TEAM_2_HQ2" instance=ExtResource("3_l14eh")]
+transform = Transform3D(-0.165771, 0, -0.986164, 0, 1, 0, 0.986164, 0, -0.165771, 3.20683, 0, 2.61964)
+
+[node name="ModBuilder_SpawnPoint" parent="TEAM_2_HQ2" node_paths=PackedStringArray("Area", "SpawnPoints") instance=ExtResource("4_u4lfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26284, 0, -2.34932)
+ObjId = 4
+Area = NodePath("../../CombatArea/CollisionPolygon3D")
+SpawnPoints = [NodePath("../SpawnPoint_2_1"), NodePath("../SpawnPoint_2_2"), NodePath("../SpawnPoint_2_3"), NodePath("../SpawnPoint_2_4")]
+
+[node name="ModBuilder_GruntSpawner" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1051.95, 186.132, 157.911)
+ObjId = 30
+
+[node name="ModBuilder_GruntSpawner2" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1011.43, 179.246, 191.396)
+ObjId = 31
+
+[node name="ModBuilder_GruntSpawner3" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1056.01, 187.771, 233.13)
+ObjId = 32
+
+[node name="ModBuilder_GruntSpawner4" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -900.877, 199.835, 211.458)
+ObjId = 33
+
+[node name="ModBuilder_GruntSpawner5" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -981.683, 198.609, 246.112)
+ObjId = 34
+
+[node name="ModBuilder_GruntSpawner6" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -981.683, 198.609, 326.449)
+ObjId = 35
+
+[node name="ModBuilder_GruntSpawner7" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -938.86, 198.609, 391.475)
+ObjId = 36
+
+[node name="ModBuilder_GruntSpawner8" parent="." instance=ExtResource("9_seyx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1069.99, 198.609, 311.808)
+ObjId = 37
+
+[node name="MapMidPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1000.45, 120.386, 279.615)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="SpawnRooms" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1022.28, 95.1642, 319.427)
+
+[node name="SpawnRoom4" type="Node3D" parent="Environment/SpawnRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330811, 7.5909, 4.5627)
+
+[node name="BuyStationProps3" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8949, 5.63601, -3.23334)
+
+[node name="CrateWeapon_01" parent="Environment/SpawnRooms/SpawnRoom4/BuyStationProps3" instance=ExtResource("26_swivc")]
+transform = Transform3D(0.980261, 0, 0.197709, 0, 1, 0, -0.197709, 0, 0.980261, -16.7592, -3.75683, -6.99791)
+
+[node name="Crate_01_A" parent="Environment/SpawnRooms/SpawnRoom4/BuyStationProps3" instance=ExtResource("27_0qo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4539, -3.51591, -7.09073)
+
+[node name="Crate_03_B" parent="Environment/SpawnRooms/SpawnRoom4/BuyStationProps3" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.845383, 0, -0.534161, 0, 1, 0, 0.534161, 0, 0.845383, -13.3196, -4.47851, -7.55463)
+
+[node name="CrateAmmo_01_StackD" parent="Environment/SpawnRooms/SpawnRoom4/BuyStationProps3" instance=ExtResource("29_uuliw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9009, -4.47389, -7.26747)
+
+[node name="Crate_03_B2" parent="Environment/SpawnRooms/SpawnRoom4/BuyStationProps3" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.787032, 0, 0.616912, 0, 1, 0, -0.616912, 0, 0.787032, -17.5132, -4.47536, -6.96538)
+
+[node name="InteractPoint2" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("24_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0688477, 2.1804, -9.90646)
+ObjId = 1
+
+[node name="WorldIcon2" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("25_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0688477, 2.1804, -9.90646)
+ObjId = 1
+iconColor = [1.0, 1.0, 0.0]
+iconImagePicker = 14
+iconImageVisible = true
+iconTeamOwnerId = 2
+
+[node name="FiringRange_Divider_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 0.915848)
+
+[node name="FiringRange_Divider_05" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 3.66847)
+
+[node name="Portal_FED_FiringRange_Floor_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20587, 1.19435, -12.1316)
+
+[node name="Portal_FED_FiringRange_Floor_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2129, 1.19639, -12.132)
+
+[node name="Portal_FED_FiringRange_EndWall_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_fpd1i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.389, 1.09832, -10.9922)
+
+[node name="Portal_FED_FiringRange_Wall_1024_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_03" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_04" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_07" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_08" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_09" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_10" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_05" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, -0.658575)
+
+[node name="Portal_FED_FiringRange_Wall_1024_06" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, 9.50793)
+
+[node name="Portal_FED_FiringRange_Ceiling_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_04" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_03" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_05" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -1.92918)
+
+[node name="FiringRange_Table_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, 0.849289)
+
+[node name="FiringRange_Divider_03" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -1.88568)
+
+[node name="FiringRange_Table_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -1.95224)
+
+[node name="FiringRange_Divider_04" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -4.66454)
+
+[node name="FiringRange_Table_03" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -4.73109)
+
+[node name="FiringRange_Divider_06" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -7.43462)
+
+[node name="FiringRange_Table_04" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -7.50117)
+
+[node name="Portal_FED_FiringRange_Ceiling_06" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -1.92918)
+
+[node name="Portal_FED_FiringRange_Ceiling_07" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -1.92918)
+
+[node name="FiringRange_Mat_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, 1.49625)
+
+[node name="FiringRange_Mat_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -1.22063)
+
+[node name="FiringRange_Mat_03" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -4.13023)
+
+[node name="FiringRange_Mat_04" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -6.85342)
+
+[node name="FiringRange_NumberFive_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.021, 2.5, -10.794)
+
+[node name="FiringRange_NumberOne_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8447, 2.5, -10.7942)
+
+[node name="FiringRange_NumberZero_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("20_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4868, 2.5, -10.7942)
+
+[node name="FiringRange_NumberOne_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2289, 2.5, -10.7942)
+
+[node name="FiringRange_NumberFive_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8585, 2.5, -10.7942)
+
+[node name="Mannequins" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0330811, -7.35831, 0)
+
+[node name="FED_MannequinRotation_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_01" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_01" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_02" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_02" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_03" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_03" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_03" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_04" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_04" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_04" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_05" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_05" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -8.94069e-08, 0, 1, 0, 8.94069e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_05" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_06" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_06" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_06" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_07" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_07" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_07" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_08" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_08" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_08" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_09" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_09" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_09" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_10" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_10" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_10" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_11" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_11" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_11" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_12" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_12" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom4/Mannequins/FED_MannequinRotation_12" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FiringRange_Railing_01" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_02" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_03" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_04" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_05" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_06" parent="Environment/SpawnRooms/SpawnRoom4" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, -5.78223)
+
+[node name="SpawnRoom5" type="Node3D" parent="Environment/SpawnRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330811, 7.5909, 29.3948)
+
+[node name="BuyStationProps4" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8949, 5.63601, -3.11664)
+
+[node name="CrateWeapon_01" parent="Environment/SpawnRooms/SpawnRoom5/BuyStationProps4" instance=ExtResource("26_swivc")]
+transform = Transform3D(0.980261, 0, 0.197709, 0, 1, 0, -0.197709, 0, 0.980261, -16.7592, -3.75683, -6.99791)
+
+[node name="Crate_01_A" parent="Environment/SpawnRooms/SpawnRoom5/BuyStationProps4" instance=ExtResource("27_0qo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4539, -3.51591, -7.09073)
+
+[node name="Crate_03_B" parent="Environment/SpawnRooms/SpawnRoom5/BuyStationProps4" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.845383, 0, -0.534161, 0, 1, 0, 0.534161, 0, 0.845383, -13.3196, -4.47851, -7.55463)
+
+[node name="CrateAmmo_01_StackD" parent="Environment/SpawnRooms/SpawnRoom5/BuyStationProps4" instance=ExtResource("29_uuliw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9009, -4.47389, -7.26747)
+
+[node name="Crate_03_B2" parent="Environment/SpawnRooms/SpawnRoom5/BuyStationProps4" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.787032, 0, 0.616912, 0, 1, 0, -0.616912, 0, 0.787032, -17.5132, -4.47536, -6.96538)
+
+[node name="FiringRange_Divider_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 0.915848)
+
+[node name="FiringRange_Divider_05" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 3.66847)
+
+[node name="Portal_FED_FiringRange_Floor_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20587, 1.19435, -12.1316)
+
+[node name="Portal_FED_FiringRange_Floor_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2129, 1.19639, -12.132)
+
+[node name="Portal_FED_FiringRange_EndWall_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_fpd1i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.389, 1.09832, -10.9922)
+
+[node name="Portal_FED_FiringRange_Wall_1024_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_03" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_04" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_07" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_08" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_09" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_10" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_05" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, -0.658575)
+
+[node name="Portal_FED_FiringRange_Wall_1024_06" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, 9.50793)
+
+[node name="Portal_FED_FiringRange_Ceiling_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_04" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_03" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_05" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -1.92918)
+
+[node name="FiringRange_Table_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, 0.849289)
+
+[node name="FiringRange_Divider_03" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -1.88568)
+
+[node name="FiringRange_Table_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -1.95224)
+
+[node name="FiringRange_Divider_04" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -4.66454)
+
+[node name="FiringRange_Table_03" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -4.73109)
+
+[node name="FiringRange_Divider_06" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -7.43462)
+
+[node name="FiringRange_Table_04" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -7.50117)
+
+[node name="Portal_FED_FiringRange_Ceiling_06" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -1.92918)
+
+[node name="Portal_FED_FiringRange_Ceiling_07" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -1.92918)
+
+[node name="FiringRange_Mat_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, 1.49625)
+
+[node name="FiringRange_Mat_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -1.22063)
+
+[node name="FiringRange_Mat_03" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -4.13023)
+
+[node name="FiringRange_Mat_04" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -6.85342)
+
+[node name="FiringRange_NumberFive_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.021, 2.5, -10.794)
+
+[node name="FiringRange_NumberOne_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8447, 2.5, -10.7942)
+
+[node name="FiringRange_NumberZero_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("20_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4868, 2.5, -10.7942)
+
+[node name="FiringRange_NumberOne_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2289, 2.5, -10.7942)
+
+[node name="FiringRange_NumberFive_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8585, 2.5, -10.7942)
+
+[node name="Mannequins" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0330811, -7.35831, 0)
+
+[node name="FED_MannequinRotation_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_01" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_01" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_02" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_02" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_03" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_03" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_03" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_04" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_04" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_04" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_05" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_05" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -8.94069e-08, 0, 1, 0, 8.94069e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_05" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_06" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_06" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_06" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_07" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_07" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_07" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_08" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_08" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_08" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_09" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_09" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_09" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_10" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_10" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_10" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_11" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_11" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_11" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_12" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_12" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom5/Mannequins/FED_MannequinRotation_12" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FiringRange_Railing_01" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_02" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_03" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_04" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_05" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_06" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, -5.78223)
+
+[node name="InteractPoint" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("24_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127258, 2.25535, -9.74725)
+ObjId = 0
+
+[node name="WorldIcon" parent="Environment/SpawnRooms/SpawnRoom5" instance=ExtResource("25_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127258, 2.25535, -9.74725)
+ObjId = 0
+iconColor = [1.0, 1.0, 0.0]
+iconImagePicker = 14
+iconImageVisible = true
+iconTeamOwnerId = 1
+
+[node name="SpawnRoom8" type="Node3D" parent="Environment/SpawnRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330811, -6.1349, 62.5913)
+
+[node name="BuyStationProps4" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8949, 5.63601, -3.11664)
+
+[node name="CrateWeapon_01" parent="Environment/SpawnRooms/SpawnRoom8/BuyStationProps4" instance=ExtResource("26_swivc")]
+transform = Transform3D(0.980261, 0, 0.197709, 0, 1, 0, -0.197709, 0, 0.980261, -16.7592, -3.75683, -6.99791)
+
+[node name="Crate_01_A" parent="Environment/SpawnRooms/SpawnRoom8/BuyStationProps4" instance=ExtResource("27_0qo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4539, -3.51591, -7.09073)
+
+[node name="Crate_03_B" parent="Environment/SpawnRooms/SpawnRoom8/BuyStationProps4" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.845383, 0, -0.534161, 0, 1, 0, 0.534161, 0, 0.845383, -13.3196, -4.47851, -7.55463)
+
+[node name="CrateAmmo_01_StackD" parent="Environment/SpawnRooms/SpawnRoom8/BuyStationProps4" instance=ExtResource("29_uuliw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9009, -4.47389, -7.26747)
+
+[node name="Crate_03_B2" parent="Environment/SpawnRooms/SpawnRoom8/BuyStationProps4" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.787032, 0, 0.616912, 0, 1, 0, -0.616912, 0, 0.787032, -17.5132, -4.47536, -6.96538)
+
+[node name="FiringRange_Divider_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 0.915848)
+
+[node name="FiringRange_Divider_05" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 3.66847)
+
+[node name="Portal_FED_FiringRange_Floor_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20587, 1.19435, -12.1316)
+
+[node name="Portal_FED_FiringRange_Floor_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2129, 1.19639, -12.132)
+
+[node name="Portal_FED_FiringRange_EndWall_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_fpd1i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.389, 1.09832, -10.9922)
+
+[node name="Portal_FED_FiringRange_Wall_1024_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_03" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_04" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_07" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_08" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_09" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_10" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_06" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.25293, 1.14454, 7.85021)
+
+[node name="Portal_FED_FiringRange_Wall_1024_11" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.25293, 1.14454, -2.36615)
+
+[node name="Portal_FED_FiringRange_Ceiling_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_04" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_03" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_05" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -1.92918)
+
+[node name="FiringRange_Table_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, 0.849289)
+
+[node name="FiringRange_Divider_03" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -1.88568)
+
+[node name="FiringRange_Table_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -1.95224)
+
+[node name="FiringRange_Divider_04" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -4.66454)
+
+[node name="FiringRange_Table_03" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -4.73109)
+
+[node name="FiringRange_Divider_06" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -7.43462)
+
+[node name="FiringRange_Table_04" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -7.50117)
+
+[node name="Portal_FED_FiringRange_Ceiling_06" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -1.92918)
+
+[node name="Portal_FED_FiringRange_Ceiling_07" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -1.92918)
+
+[node name="FiringRange_Mat_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, 1.49625)
+
+[node name="FiringRange_Mat_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -1.22063)
+
+[node name="FiringRange_Mat_03" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -4.13023)
+
+[node name="FiringRange_Mat_04" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -6.85342)
+
+[node name="FiringRange_NumberFive_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.021, 2.5, -10.794)
+
+[node name="FiringRange_NumberOne_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8447, 2.5, -10.7942)
+
+[node name="FiringRange_NumberZero_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("20_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4868, 2.5, -10.7942)
+
+[node name="FiringRange_NumberOne_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2289, 2.5, -10.7942)
+
+[node name="FiringRange_NumberFive_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8585, 2.5, -10.7942)
+
+[node name="Mannequins" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0330811, -7.35831, 0)
+
+[node name="FED_MannequinRotation_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_01" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_01" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_02" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_02" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_03" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_03" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_03" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_04" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_04" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_04" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_05" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_05" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -8.94069e-08, 0, 1, 0, 8.94069e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_05" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_06" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_06" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_06" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_07" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_07" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_07" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_08" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_08" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_08" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_09" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_09" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_09" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_10" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_10" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_10" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_11" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_11" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_11" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_12" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_12" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom8/Mannequins/FED_MannequinRotation_12" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FiringRange_Railing_01" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_02" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_03" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_04" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_05" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_06" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, -5.78223)
+
+[node name="InteractPoint" parent="Environment/SpawnRooms/SpawnRoom8" instance=ExtResource("24_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0478516, 2.25535, -9.72644)
+ObjId = 0
+
+[node name="SpawnRoom6" type="Node3D" parent="Environment/SpawnRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330811, 7.5909, -35.3055)
+
+[node name="BuyStationProps2" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8949, 5.63601, -3.18423)
+
+[node name="CrateWeapon_01" parent="Environment/SpawnRooms/SpawnRoom6/BuyStationProps2" instance=ExtResource("26_swivc")]
+transform = Transform3D(0.980261, 0, 0.197709, 0, 1, 0, -0.197709, 0, 0.980261, -16.7592, -3.75683, -6.99791)
+
+[node name="Crate_01_A" parent="Environment/SpawnRooms/SpawnRoom6/BuyStationProps2" instance=ExtResource("27_0qo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4539, -3.51591, -7.09073)
+
+[node name="Crate_03_B" parent="Environment/SpawnRooms/SpawnRoom6/BuyStationProps2" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.845383, 0, -0.534161, 0, 1, 0, 0.534161, 0, 0.845383, -13.3196, -4.47851, -7.55463)
+
+[node name="CrateAmmo_01_StackD" parent="Environment/SpawnRooms/SpawnRoom6/BuyStationProps2" instance=ExtResource("29_uuliw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9009, -4.47389, -7.26747)
+
+[node name="Crate_03_B2" parent="Environment/SpawnRooms/SpawnRoom6/BuyStationProps2" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.787032, 0, 0.616912, 0, 1, 0, -0.616912, 0, 0.787032, -17.5132, -4.47536, -6.96538)
+
+[node name="InteractPoint3" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("24_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0629883, 2.19637, -9.8746)
+ObjId = 2
+
+[node name="WorldIcon3" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("25_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0629883, 2.19637, -9.8746)
+ObjId = 2
+iconColor = [1.0, 1.0, 0.0]
+iconImagePicker = 14
+iconImageVisible = true
+iconTeamOwnerId = 3
+
+[node name="FiringRange_Divider_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 0.915848)
+
+[node name="FiringRange_Divider_05" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 3.66847)
+
+[node name="Portal_FED_FiringRange_Floor_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20587, 1.19435, -12.1316)
+
+[node name="Portal_FED_FiringRange_Floor_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2129, 1.19639, -12.132)
+
+[node name="Portal_FED_FiringRange_EndWall_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_fpd1i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.389, 1.09832, -10.9922)
+
+[node name="Portal_FED_FiringRange_Wall_1024_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_03" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_04" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_07" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_08" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_09" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_10" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_05" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, -0.658575)
+
+[node name="Portal_FED_FiringRange_Wall_1024_06" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, 9.50793)
+
+[node name="Portal_FED_FiringRange_Ceiling_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_04" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_03" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_05" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -1.92918)
+
+[node name="FiringRange_Table_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, 0.849289)
+
+[node name="FiringRange_Divider_03" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -1.88568)
+
+[node name="FiringRange_Table_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -1.95224)
+
+[node name="FiringRange_Divider_04" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -4.66454)
+
+[node name="FiringRange_Table_03" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -4.73109)
+
+[node name="FiringRange_Divider_06" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -7.43462)
+
+[node name="FiringRange_Table_04" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -7.50117)
+
+[node name="Portal_FED_FiringRange_Ceiling_06" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -1.92918)
+
+[node name="Portal_FED_FiringRange_Ceiling_07" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -1.92918)
+
+[node name="FiringRange_Mat_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, 1.49625)
+
+[node name="FiringRange_Mat_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -1.22063)
+
+[node name="FiringRange_Mat_03" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -4.13023)
+
+[node name="FiringRange_Mat_04" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -6.85342)
+
+[node name="FiringRange_NumberFive_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.021, 2.5, -10.794)
+
+[node name="FiringRange_NumberOne_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8447, 2.5, -10.7942)
+
+[node name="FiringRange_NumberZero_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("20_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4868, 2.5, -10.7942)
+
+[node name="FiringRange_NumberOne_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2289, 2.5, -10.7942)
+
+[node name="FiringRange_NumberFive_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8585, 2.5, -10.7942)
+
+[node name="Mannequins" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0330811, -7.35831, 0)
+
+[node name="FED_MannequinRotation_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_01" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_01" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_02" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_02" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_03" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_03" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_03" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_04" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_04" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_04" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_05" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_05" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -8.94069e-08, 0, 1, 0, 8.94069e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_05" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_06" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_06" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_06" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_07" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_07" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_07" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_08" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_08" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_08" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_09" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_09" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_09" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_10" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_10" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_10" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_11" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_11" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_11" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_12" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_12" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom6/Mannequins/FED_MannequinRotation_12" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FiringRange_Railing_01" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_02" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_03" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_04" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_05" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_06" parent="Environment/SpawnRooms/SpawnRoom6" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, -5.78223)
+
+[node name="SpawnRoom7" type="Node3D" parent="Environment/SpawnRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330811, 7.5909, -66.3428)
+
+[node name="BuyStationProps" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8949, 5.63601, -3.06769)
+
+[node name="CrateWeapon_01" parent="Environment/SpawnRooms/SpawnRoom7/BuyStationProps" instance=ExtResource("26_swivc")]
+transform = Transform3D(0.980261, 0, 0.197709, 0, 1, 0, -0.197709, 0, 0.980261, -16.7592, -3.75683, -6.99791)
+
+[node name="Crate_01_A" parent="Environment/SpawnRooms/SpawnRoom7/BuyStationProps" instance=ExtResource("27_0qo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4539, -3.51591, -7.09073)
+
+[node name="Crate_03_B" parent="Environment/SpawnRooms/SpawnRoom7/BuyStationProps" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.845383, 0, -0.534161, 0, 1, 0, 0.534161, 0, 0.845383, -13.3196, -4.47851, -7.55463)
+
+[node name="CrateAmmo_01_StackD" parent="Environment/SpawnRooms/SpawnRoom7/BuyStationProps" instance=ExtResource("29_uuliw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9009, -4.47389, -7.26747)
+
+[node name="Crate_03_B2" parent="Environment/SpawnRooms/SpawnRoom7/BuyStationProps" instance=ExtResource("28_6cqx5")]
+transform = Transform3D(0.787032, 0, 0.616912, 0, 1, 0, -0.616912, 0, 0.787032, -17.5132, -4.47536, -6.96538)
+
+[node name="InteractPoint4" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("24_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00457764, 2.19054, -9.86224)
+ObjId = 3
+
+[node name="WorldIcon4" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("25_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00457764, 2.19054, -9.86224)
+ObjId = 3
+iconColor = [1.0, 1.0, 0.0]
+iconImagePicker = 14
+iconImageVisible = true
+iconTeamOwnerId = 4
+
+[node name="FiringRange_Divider_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 0.915848)
+
+[node name="FiringRange_Divider_05" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, 3.66847)
+
+[node name="Portal_FED_FiringRange_Floor_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20587, 1.19435, -12.1316)
+
+[node name="Portal_FED_FiringRange_Floor_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("13_af150")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2129, 1.19639, -12.132)
+
+[node name="Portal_FED_FiringRange_EndWall_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_fpd1i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.389, 1.09832, -10.9922)
+
+[node name="Portal_FED_FiringRange_Wall_1024_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_03" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_04" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, -11.4342)
+
+[node name="Portal_FED_FiringRange_Wall_1024_07" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5563, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_08" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4146, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_09" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19312, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_10" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01965, 1.14454, 6.74677)
+
+[node name="Portal_FED_FiringRange_Wall_1024_05" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, -0.658575)
+
+[node name="Portal_FED_FiringRange_Wall_1024_06" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("15_gii3i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.01965, 1.14454, 9.50793)
+
+[node name="Portal_FED_FiringRange_Ceiling_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_04" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_03" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -12.1379)
+
+[node name="Portal_FED_FiringRange_Ceiling_05" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7851, 6.03442, -1.92918)
+
+[node name="FiringRange_Table_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, 0.849289)
+
+[node name="FiringRange_Divider_03" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -1.88568)
+
+[node name="FiringRange_Table_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -1.95224)
+
+[node name="FiringRange_Divider_04" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -4.66454)
+
+[node name="FiringRange_Table_03" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -4.73109)
+
+[node name="FiringRange_Divider_06" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_x0hvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.4646, 1.20453, -7.43462)
+
+[node name="FiringRange_Table_04" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_n6nmm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21057, 1.81103, -7.50117)
+
+[node name="Portal_FED_FiringRange_Ceiling_06" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14636, 6.03442, -1.92918)
+
+[node name="Portal_FED_FiringRange_Ceiling_07" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("16_gii3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7731, 6.03442, -1.92918)
+
+[node name="FiringRange_Mat_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, 1.49625)
+
+[node name="FiringRange_Mat_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -1.22063)
+
+[node name="FiringRange_Mat_03" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -4.13023)
+
+[node name="FiringRange_Mat_04" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("17_n6nmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85034, 1.1944, -6.85342)
+
+[node name="FiringRange_NumberFive_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.021, 2.5, -10.794)
+
+[node name="FiringRange_NumberOne_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8447, 2.5, -10.7942)
+
+[node name="FiringRange_NumberZero_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("20_yq3pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4868, 2.5, -10.7942)
+
+[node name="FiringRange_NumberOne_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("19_er6qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2289, 2.5, -10.7942)
+
+[node name="FiringRange_NumberFive_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("18_vqvvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8585, 2.5, -10.7942)
+
+[node name="Mannequins" type="Node3D" parent="Environment/SpawnRooms/SpawnRoom7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0330811, -7.35831, 0)
+
+[node name="FED_MannequinRotation_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_01" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_01" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_02" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_02" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_03" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_03" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_03" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_04" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 13.4896, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_04" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_04" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_05" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_05" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -8.94069e-08, 0, 1, 0, 8.94069e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_05" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_06" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_06" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_06" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_07" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_07" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_07" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_08" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 23.4205, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_08" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_08" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00219727)
+
+[node name="FED_MannequinRotation_09" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -5.81741)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_09" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_09" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_10" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -3.04231)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_10" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_10" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_11" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, -0.198929)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_11" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_11" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FED_MannequinRotation_12" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins" instance=ExtResource("18_ucjbd")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 33.6129, 9.02406, 2.60612)
+
+[node name="FiringRange_Target_01" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_12" instance=ExtResource("11_gii3i")]
+transform = Transform3D(1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -0.351379, 0, 0.224976)
+
+[node name="FiringRange_MannequinRotation_02" parent="Environment/SpawnRooms/SpawnRoom7/Mannequins/FED_MannequinRotation_12" instance=ExtResource("12_ucjbd")]
+transform = Transform3D(1, 0, -7.35137e-08, 0, 1, 0, 7.35137e-08, 0, 1, 0.162811, -0.247566, 0.00213623)
+
+[node name="FiringRange_Railing_01" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_02" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 13.4589, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_03" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_04" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 23.3563, 1.19435, -5.78223)
+
+[node name="FiringRange_Railing_05" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, 1.87273)
+
+[node name="FiringRange_Railing_06" parent="Environment/SpawnRooms/SpawnRoom7" instance=ExtResource("23_vqvvf")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 33.5757, 1.19435, -5.78223)
+
+[node name="LootZones" type="Node" parent="."]
+
+[node name="LootZone75" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -867.673, 122.332, 209.989)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone378" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -867.673, 127.429, 209.989)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone379" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -869.406, 127.429, 226.071)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone77" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -904.129, 122.332, 184.447)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone289" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -900.383, 126.906, 181.978)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone291" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -915.144, 126.906, 177.597)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone78" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -911.931, 122.332, 173.789)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone80" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -920.491, 122.332, 184.186)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone81" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -907.926, 122.332, 190.648)
+size = Vector3(2.8, 2.8, 2.8)
+
+[node name="LootZone82" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -913.339, 122.332, 201.808)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone83" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -930.681, 122.332, 194.731)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone292" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -922.655, 126.841, 181.52)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone293" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -909.1, 126.841, 190.551)
+size = Vector3(2.8, 2.8, 2.8)
+
+[node name="LootZone294" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -915.409, 126.841, 205.18)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone296" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -927.761, 126.926, 214.541)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone310" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -925.042, 131.434, 212.877)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone311" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -922.883, 136.018, 214.788)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone297" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -927.313, 122.464, 212.881)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone295" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -932.824, 126.841, 193.3)
+size = Vector3(2.685, 2.685, 2.685)
+
+[node name="LootZone305" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -922.655, 131.305, 181.52)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone306" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -910.615, 131.305, 190.551)
+size = Vector3(2.8, 2.8, 2.8)
+
+[node name="LootZone307" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -915.409, 131.305, 205.18)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone308" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -927.761, 131.39, 218.41)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone309" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -932.824, 131.305, 194.271)
+size = Vector3(2.685, 2.685, 2.685)
+
+[node name="LootZone84" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -939.681, 122.426, 159.308)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone85" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -955.269, 122.332, 149.931)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone86" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -961.446, 122.332, 164.082)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone87" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -967.721, 122.332, 155.568)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone88" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -962.17, 122.332, 141.428)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone89" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -975.236, 122.332, 148.498)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone90" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.048, 122.332, 137.782)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone298" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -939.681, 126.941, 159.308)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone299" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -954.218, 126.847, 151.055)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone300" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -963.281, 126.847, 163.033)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone301" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -967.721, 126.847, 155.568)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone302" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -958.531, 126.847, 143.078)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone312" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -939.681, 131.477, 159.308)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone313" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -949.985, 131.383, 151.055)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone317" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -943.334, 135.895, 157.756)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone318" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -931.997, 140.946, 153.924)
+size = Vector3(1.255, 1.255, 1.255)
+
+[node name="LootZone314" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -963.281, 131.383, 163.033)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone315" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -967.721, 131.383, 155.568)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone316" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -958.531, 131.383, 143.078)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone303" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -975.236, 126.847, 148.498)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone304" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.048, 126.847, 137.782)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone91" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.523, 122.332, 128.149)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone92" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -994.995, 122.332, 138.516)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone93" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1008.34, 122.332, 126.896)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone94" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -997.86, 122.332, 122.934)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone319" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.523, 126.919, 128.149)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone320" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -998.072, 126.919, 136.125)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone321" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1015.81, 126.919, 123.035)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone322" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -997.86, 126.919, 122.934)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone95" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1018.51, 122.412, 120.669)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone96" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1009.07, 122.412, 111.476)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone97" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1045.7, 122.277, 97.7815)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone98" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1049.32, 122.277, 109.958)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone99" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1067.33, 122.277, 111.604)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone100" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1059.57, 122.277, 121.399)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone101" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1064.78, 122.277, 132.203)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone102" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1073.39, 122.277, 141.053)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone323" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1046.12, 126.802, 96.5181)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone324" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1051.31, 126.802, 114.294)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone325" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1067.33, 126.802, 111.604)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone329" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1057.29, 126.802, 96.9997)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone330" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050.44, 131.246, 95.4952)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone331" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1051.01, 131.246, 116.076)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone326" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1059.57, 126.802, 121.399)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone332" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1073.8, 126.802, 128.623)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone327" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1064.78, 126.802, 132.203)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone328" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1072.99, 126.802, 138.305)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone333" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1077.63, 126.802, 145.152)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone334" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1064.78, 131.341, 132.203)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone335" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1074.43, 131.341, 138.305)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone336" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1080.66, 131.341, 146.842)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone337" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1072.1, 135.849, 141.195)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone338" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1067, 135.849, 129.264)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone103" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1043.77, 121.776, 154.954)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone104" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1021.24, 121.776, 161.185)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone105" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1048.94, 121.776, 174.4)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone106" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1065.65, 121.776, 178.448)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone339" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1043.77, 126.972, 154.954)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone340" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1023.22, 126.972, 160.582)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone341" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1048.94, 126.972, 174.4)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone342" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1063.33, 126.972, 178.448)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone343" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1043.77, 132.213, 154.954)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone344" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1023.22, 132.213, 163.053)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone345" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1048.94, 132.213, 174.4)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone346" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1063.33, 132.213, 178.448)
+size = Vector3(4.355, 4.355, 4.355)
+
+[node name="LootZone107" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1027.05, 122.507, 210.783)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone108" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1011.43, 122.507, 207.862)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone109" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1022.29, 122.507, 217.514)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone110" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1011.89, 122.507, 222.212)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone111" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1000.19, 122.507, 212.852)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone359" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1011.89, 126.995, 222.212)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone360" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1001.19, 126.995, 214.168)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone361" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1015.71, 126.995, 205.488)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone362" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1024.11, 126.995, 218.311)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone363" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1030.6, 126.995, 214.062)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone364" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1030.6, 131.357, 214.062)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone365" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1027.75, 131.357, 202.328)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone366" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1020.7, 135.829, 216.101)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone112" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.962, 122.121, 183.682)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone347" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -975.73, 122.121, 199.38)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone113" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.177, 122.061, 188.83)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone114" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -956.391, 122.061, 200.818)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone348" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -982.204, 126.62, 183.394)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone352" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -982.204, 131.114, 179.84)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone353" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -977.41, 131.114, 189.665)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone354" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -964.782, 131.114, 189.831)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone355" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -960.108, 131.114, 204.849)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone356" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -950.403, 131.114, 203.663)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone357" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -955.684, 135.634, 196.766)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone358" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -983.096, 135.634, 181.323)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone349" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -975.73, 126.62, 199.38)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone350" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.177, 126.56, 188.83)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone351" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -956.391, 126.56, 200.818)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone115" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -954.654, 122.458, 228.959)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone116" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -960.43, 122.458, 238.44)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone117" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -977.488, 122.458, 243.953)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone118" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.202, 122.458, 237.516)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone367" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -983.391, 122.458, 226.986)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone368" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -960.43, 126.951, 238.44)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone369" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -977.488, 126.951, 243.953)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone370" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.808, 126.951, 237.399)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone371" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -983.391, 126.951, 226.986)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone372" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.209, 126.951, 230.039)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone373" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.209, 131.389, 238.504)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone374" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -951.651, 131.389, 234.184)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone375" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -992.771, 131.389, 240.093)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone376" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -976.102, 135.918, 243.96)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone377" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -950.892, 135.918, 226.753)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone119" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -889.52, 122.458, 253.419)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone120" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -889.52, 122.352, 253.419)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone121" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -898.828, 122.352, 261.626)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone385" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -891.714, 122.352, 270.524)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone386" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -903.028, 122.352, 286.64)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone387" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -911.024, 122.352, 299.171)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone122" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -907.208, 122.352, 274.577)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone123" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -911.076, 122.228, 281.371)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone124" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -919.072, 122.228, 290.603)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone380" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -888.739, 126.931, 252.216)
+size = Vector3(3.37, 3.37, 3.37)
+
+[node name="LootZone381" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -898.828, 126.796, 261.626)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone382" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -907.208, 126.796, 274.577)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone383" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -911.076, 126.672, 281.371)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone384" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -919.072, 126.73, 290.603)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone388" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -912.459, 126.73, 299.665)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone389" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -905.915, 126.73, 282.464)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone390" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -887.611, 126.73, 268.669)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone391" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -893.571, 131.276, 265.967)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone392" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -889.402, 131.276, 246.587)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone393" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -894.909, 131.338, 254.05)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone394" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -899.878, 131.338, 260.29)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone395" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -912.948, 131.338, 278.519)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone396" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -916.543, 131.338, 289.515)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone397" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -900.421, 135.769, 262.263)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone398" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -895.859, 135.769, 249.997)
+size = Vector3(2.66, 2.66, 2.66)
+
+[node name="LootZone125" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -942.065, 122.334, 315.129)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone126" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -944.609, 122.334, 323.897)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone127" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -955.316, 122.334, 333.484)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone128" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -961.15, 122.334, 338.873)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone403" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -948.757, 122.334, 352.085)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone404" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -941.931, 122.334, 341.671)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone405" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -941.931, 126.864, 341.671)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone406" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -951.429, 126.864, 351.23)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone407" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -938.634, 126.864, 325.205)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone408" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -947.709, 131.301, 319.205)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone409" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -953.112, 131.301, 336.958)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone410" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -962.691, 131.301, 341.159)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone411" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -932.072, 131.301, 316.327)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone399" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -942.065, 126.817, 311.155)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone400" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -944.609, 126.817, 323.897)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone401" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -955.316, 126.817, 328.321)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone402" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -961.15, 126.817, 344.02)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone129" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -964.955, 122.334, 355)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone130" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -956.701, 122.334, 362.874)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone131" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -968.043, 122.334, 374.666)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone132" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -971.351, 122.334, 364.635)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone133" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.031, 122.334, 374.508)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone134" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -974.139, 122.334, 384.061)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone135" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.664, 122.334, 384.061)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone136" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -981.842, 122.334, 393.286)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone412" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -964.955, 126.764, 355)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone413" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -956.701, 126.764, 362.874)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone414" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -968.043, 126.764, 374.666)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone415" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -979.931, 127.502, 359.06)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone417" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -974.139, 126.764, 384.061)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone418" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.664, 126.764, 384.061)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone137" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -975.768, 122.334, 288.527)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone138" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -991.79, 122.539, 279.418)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone139" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.901, 122.539, 294.059)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone140" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -992.835, 122.539, 301.815)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone141" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1000.82, 122.539, 312.251)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone460" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1010.46, 122.539, 303.602)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone461" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1005.52, 122.539, 298.232)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone462" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1005.52, 126.913, 298.232)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone463" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1016.18, 126.913, 314.498)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone482" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1042.05, 122.131, 294.875)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone483" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1039.21, 122.131, 299.288)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone464" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1013.8, 131.533, 318.861)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone465" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1011.63, 131.533, 329.182)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone466" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.63, 131.533, 303.461)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone469" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -998.377, 131.533, 311.662)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone470" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1006.38, 131.533, 321.337)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone471" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1010.26, 136.069, 323.285)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone472" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -996.326, 136.069, 313.27)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone467" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -982.301, 131.533, 286.085)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone468" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -992.652, 131.533, 272.286)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone142" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1013.41, 122.539, 322.993)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone454" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -975.768, 126.863, 288.527)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone455" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -991.79, 126.921, 279.418)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone456" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -988.901, 126.921, 294.059)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone457" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -992.835, 126.921, 301.815)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone458" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -999.255, 126.921, 310.895)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone459" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1013.41, 127.013, 322.993)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone143" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1038.63, 122.319, 346.349)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone484" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1033.51, 126.855, 353.166)
+size = Vector3(3.15, 3.15, 3.15)
+
+[node name="LootZone485" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1048.72, 126.855, 359.632)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone487" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1056.65, 126.855, 391.101)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone488" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1062.71, 126.855, 399.123)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone489" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.28, 126.855, 399.123)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone490" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1086.04, 126.855, 399.123)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone491" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.64, 131.351, 396.836)
+size = Vector3(3.875, 3.875, 3.875)
+
+[node name="LootZone492" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1057.07, 131.351, 391.538)
+size = Vector3(3.875, 3.875, 3.875)
+
+[node name="LootZone493" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1073.64, 135.826, 400.373)
+size = Vector3(3.875, 3.875, 3.875)
+
+[node name="LootZone494" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1072.21, 131.362, 400.373)
+size = Vector3(3.875, 3.875, 3.875)
+
+[node name="LootZone486" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050.54, 126.855, 381.203)
+size = Vector3(4.005, 4.005, 4.005)
+
+[node name="LootZone144" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1029.65, 122.319, 355.446)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone145" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1037.19, 122.319, 366.788)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone146" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1048.27, 122.319, 360.902)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone147" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1051.54, 122.319, 365.975)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone148" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1042.95, 122.319, 377.462)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone149" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1058.28, 122.319, 374.487)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone150" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1049.4, 122.319, 385.743)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone151" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1057.83, 122.319, 391.996)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone152" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1073.88, 122.319, 400.978)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone153" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1086.6, 122.319, 399.276)
+size = Vector3(2.32, 2.32, 2.32)
+
+[node name="LootZone154" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1002.66, 122.381, 407.5)
+size = Vector3(2.985, 2.985, 2.985)
+
+[node name="LootZone155" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1014.27, 122.381, 419.28)
+size = Vector3(2.985, 2.985, 2.985)
+
+[node name="LootZone156" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1006.23, 122.381, 426.617)
+size = Vector3(2.985, 2.985, 2.985)
+
+[node name="LootZone157" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1021.36, 122.381, 425.469)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone158" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1028.13, 122.381, 438.076)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone159" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1035.76, 122.381, 447.979)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone160" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1045.28, 122.381, 456.608)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone161" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1034.64, 122.381, 463.612)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone426" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1026.96, 122.381, 455.396)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone427" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1022.19, 126.822, 453.477)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone428" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1024.55, 126.822, 442.63)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone429" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1034.08, 131.236, 442.63)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone430" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1037.92, 131.236, 460.496)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone431" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1018.57, 131.236, 425.76)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone432" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1003.21, 131.236, 413.806)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone433" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1002.39, 131.236, 401.133)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone434" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1006.21, 135.855, 407.918)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone435" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1017.4, 135.855, 415.53)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone416" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1005.17, 126.927, 401.614)
+size = Vector3(2.985, 2.985, 2.985)
+
+[node name="LootZone419" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1015.28, 126.927, 419.883)
+size = Vector3(2.985, 2.985, 2.985)
+
+[node name="LootZone420" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1006.23, 126.927, 426.617)
+size = Vector3(2.985, 2.985, 2.985)
+
+[node name="LootZone421" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1021.36, 126.927, 425.469)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone422" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1028.13, 126.927, 438.076)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone423" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1035.76, 126.927, 447.979)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone424" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1043.18, 126.927, 458.544)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone425" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1034.64, 126.927, 463.612)
+size = Vector3(2.575, 2.575, 2.575)
+
+[node name="LootZone162" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1004.67, 122.381, 467.675)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone163" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -984.015, 122.381, 474.198)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone164" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.796, 122.381, 457.249)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone165" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -963.338, 122.381, 449.813)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone166" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.651, 122.381, 434.669)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone436" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1004.67, 127.575, 467.675)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone437" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -984.015, 127.575, 474.198)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone438" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.796, 127.575, 457.249)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone439" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -963.338, 127.575, 449.813)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone440" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.651, 127.575, 434.669)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone441" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1003.79, 132.658, 466.379)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone446" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -992.835, 127.686, 538.693)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone447" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -995.554, 127.686, 550.935)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone448" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -996.978, 122.362, 544.995)
+size = Vector3(2.9, 2.9, 2.9)
+
+[node name="LootZone449" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -993.999, 122.362, 534.202)
+size = Vector3(2.9, 2.9, 2.9)
+
+[node name="LootZone442" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -984.015, 132.658, 474.198)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone443" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.796, 132.658, 457.249)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone444" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -963.338, 132.658, 449.813)
+size = Vector3(4.62, 4.62, 4.62)
+
+[node name="LootZone445" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -980.651, 132.658, 434.669)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone167" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1083.9, 121.433, 350.155)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone168" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.57, 121.433, 335.756)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone169" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1081.85, 121.367, 320.853)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone170" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1083.22, 121.367, 310.243)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone171" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.05, 121.367, 296.956)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone172" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.8, 121.367, 308.172)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone173" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.8, 121.367, 319.415)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone174" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.8, 121.367, 335.354)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone510" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1083.9, 125.908, 350.155)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone511" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.57, 125.908, 335.756)
+size = Vector3(3.565, 3.565, 3.565)
+
+[node name="LootZone512" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1081.85, 125.841, 320.853)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone513" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1081.35, 125.841, 307.912)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone516" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1083.86, 130.272, 332.542)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone518" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1079.04, 130.419, 342.98)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone520" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1083.26, 134.94, 349.182)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone519" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1081.17, 130.417, 349.379)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone514" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.05, 125.952, 296.956)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone521" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.05, 134.951, 299.366)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone522" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1080.98, 130.436, 300.151)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone523" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.55, 130.436, 289.964)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone515" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.8, 125.841, 308.172)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone517" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.8, 125.841, 335.354)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone175" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.1, 121.367, 269.353)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone176" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.36, 121.367, 269.353)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone177" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.36, 121.367, 256.075)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone178" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.36, 121.367, 241.001)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone179" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1072.03, 121.45, 228.379)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone180" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.23, 121.367, 256.917)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone495" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1067.89, 125.823, 269.394)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone501" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1081.74, 130.292, 269.107)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone502" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1087.5, 130.292, 263.004)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone503" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1085.52, 130.292, 256.437)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone504" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1080.93, 130.292, 245.047)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone505" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1074.19, 130.292, 240.867)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone506" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1067.39, 130.292, 224.064)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone507" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1070.63, 134.924, 227.877)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone508" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1087.09, 134.924, 243.888)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone509" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1081.93, 134.924, 256.352)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone496" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.36, 125.823, 268.873)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone497" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1082.36, 125.823, 257.629)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone498" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1083.79, 125.866, 241.001)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone499" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1068.36, 125.906, 224.518)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone500" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1071.23, 125.823, 256.917)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone181" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.62, 122.356, 258.276)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone182" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1035.62, 122.356, 244.533)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone183" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1024.77, 122.356, 252.541)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone184" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1035.39, 122.356, 261.405)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone185" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1017.52, 122.356, 261.479)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone473" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.62, 126.918, 258.276)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone474" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1035.62, 126.918, 244.533)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone475" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1024.77, 126.918, 252.541)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone478" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1024.77, 131.391, 252.541)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone480" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1021.12, 131.391, 265.902)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone481" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1012.52, 131.391, 257.998)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone479" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1024.77, 135.86, 255.276)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone476" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1035.39, 126.918, 261.405)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone477" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1017.52, 126.918, 261.479)
+size = Vector3(2.815, 2.815, 2.815)
+
+[node name="LootZone79" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -911.931, 122.332, 182.975)
+size = Vector3(3.305, 3.305, 3.305)
+
+[node name="LootZone76" parent="LootZones" instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -872.678, 122.332, 224.32)
+size = Vector3(2.19, 2.19, 2.19)
+
+[node name="TeamTeleportPoints" type="Node" parent="."]
+
+[node name="PointTeam1" type="Node3D" parent="TeamTeleportPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1075, 177.897, 388.992)
+
+[node name="PointTeam2" type="Node3D" parent="TeamTeleportPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1056.28, 176.341, 202.244)
+
+[node name="PointTeam3" type="Node3D" parent="TeamTeleportPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -962.95, 176.488, 382.668)
+
+[node name="PointTeam4" type="Node3D" parent="TeamTeleportPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -926.858, 171.039, 234.177)
+
+[node name="CollisionShape3D" parent="." instance=ExtResource("2_cjtf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -969.904, 0, 291.976)
+size = Vector3(357.683, 623.522, 478.821)
+
+[node name="RingOfFire" parent="." node_paths=PackedStringArray("HardRestrictOBB", "RestrictShapeData") instance=ExtResource("10_0qo24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1000.45, 126.892, 279.615)
+ShrinkTimeOverride_00 = 35
+ShrinkTimeOverride_01 = 35
+ShrinkTimeOverride_02 = 35
+ShrinkTimeOverride_03 = 35
+ShrinkTimeOverride_04 = 35
+ShrinkTimeOverride_05 = 35
+ShrinkTimeOverride_06 = 35
+ShrinkTimeOverride_07 = 35
+ZoneSizeOverride_00 = 800
+ZoneSizeOverride_01 = 600
+ZoneSizeOverride_02 = 300
+ZoneSizeOverride_03 = 200
+ZoneSizeOverride_04 = 100
+ZoneSizeOverride_05 = 50
+ZoneSizeOverride_06 = 10
+ObjId = 1
+PortalStableTime = 35
+PortalDamageAmount = 900
+HardRestrictOBB = NodePath("../CollisionShape3D")
+RestrictShapeData = NodePath("../RingOfFireVolume")
+
+[node name="RingOfFireVolume" parent="." instance=ExtResource("2_cjtf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -796.579, 0, 0)
+points = PackedVector2Array(5.57092, 265.675, -177.188, 526.39, -317.464, 435.699, -374.727, 1.57533, -42.2646, 190.401)
+height = 50.0

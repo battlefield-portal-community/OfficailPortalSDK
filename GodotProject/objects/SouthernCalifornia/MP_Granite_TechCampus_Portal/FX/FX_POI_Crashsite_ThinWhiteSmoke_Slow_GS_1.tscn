@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/FX_Default.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_TechCampus_Portal/FX/FX_POI_Crashsite_ThinWhiteSmoke_Slow_GS_1.gd" type="Script" id="2"]
+
+
+[node name="FX_POI_Crashsite_ThinWhiteSmoke_Slow_GS_1" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

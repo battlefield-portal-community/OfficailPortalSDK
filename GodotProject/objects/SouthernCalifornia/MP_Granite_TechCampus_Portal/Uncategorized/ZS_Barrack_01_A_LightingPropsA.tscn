@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/ZS_Barrack_01_A_LightingPropsA.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_TechCampus_Portal/Uncategorized/ZS_Barrack_01_A_LightingPropsA.gd" type="Script" id="2"]
+
+
+[node name="ZS_Barrack_01_A_LightingPropsA" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]
