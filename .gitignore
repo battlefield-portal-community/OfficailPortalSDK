@@ -19,25 +19,14 @@ mono_crash.*.json
 ### SDK SPECIFIC
 python/
 *.exe
+FbExportData/thumbnails/
+GodotProject/raw/
+
 ### keep gdconverter build
-!SDK/deps/gdconverter/bin/export_tscn.exe
 *.app
-SDK/venv/
 export/
 GodotProject/addons/scene-library/scene_library.json
 **/.DS_Store
-
-### Paths to be populated by build CI
-
-SDK/deps/FbExportData/thumbnails/
-SDK/runtime/
-GodotProject/raw/
-
-
-
-
-
-
 
 # Python Specific 
 # Byte-compiled / optimized / DLL files
