@@ -1,0 +1,13 @@
+{
+  "modversion": "Script ver: {}-{}-{}",
+  "playerRequired": "Not Enough Players: {}/{}",
+  "countdowntime": "Starting Game In: {}",
+  "nextRoundCountdowntime": "Next Round Starts In: {}",
+  "threeTwoOne": "{}",
+  "go": "GO!",
+  "roundWinner": "{} Won this round!",
+  "gamemodeName": "Bumper Cars",
+  "playerName": "{}",
+  "gameGoal": "Collect 3 Crowns to win!",
+  "readyUp": "Ready"
+}

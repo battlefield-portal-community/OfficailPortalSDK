@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/CountryClub_01_B_DebrisPile.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_ClubHouse_Portal/Architecture/CountryClub_01_B_DebrisPile.gd" type="Script" id="2"]
+
+
+[node name="CountryClub_01_B_DebrisPile" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

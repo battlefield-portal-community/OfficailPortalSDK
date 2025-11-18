@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/TunnelBrokenEntrance_Destroyed_03.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_Marina_Portal/Generic/Industrial/Architecture/TunnelBrokenEntrance_Destroyed_03.gd" type="Script" id="2"]
+
+
+[node name="TunnelBrokenEntrance_Destroyed_03" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

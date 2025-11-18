@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/RetailStorefront_03_2117_CV45_B_MarinaLightingProps.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_Marina_Portal/Architecture/RetailStorefront_03_2117_CV45_B_MarinaLightingProps.gd" type="Script" id="2"]
+
+
+[node name="RetailStorefront_03_2117_CV45_B_MarinaLightingProps" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

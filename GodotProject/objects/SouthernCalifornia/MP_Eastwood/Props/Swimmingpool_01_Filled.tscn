@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/Swimmingpool_01_Filled.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Eastwood/Props/Swimmingpool_01_Filled.gd" type="Script" id="2"]
+
+
+[node name="Swimmingpool_01_Filled" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

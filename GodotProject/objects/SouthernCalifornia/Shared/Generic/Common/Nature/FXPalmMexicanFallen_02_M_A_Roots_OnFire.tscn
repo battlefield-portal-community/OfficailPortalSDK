@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/FXPalmMexicanFallen_02_M_A_Roots_OnFire.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/Shared/Generic/Common/Nature/FXPalmMexicanFallen_02_M_A_Roots_OnFire.gd" type="Script" id="2"]
+
+
+[node name="FXPalmMexicanFallen_02_M_A_Roots_OnFire" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]

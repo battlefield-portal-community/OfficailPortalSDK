@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource path="res://raw/models/MarinaStorefront_04_Attachments.glb" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/SouthernCalifornia/MP_Granite_Marina_Portal/Uncategorized/MarinaStorefront_04_Attachments.gd" type="Script" id="2"]
+
+
+[node name="MarinaStorefront_04_Attachments" type="Node3D"]
+script = ExtResource("2")
+
+[node name="Mesh" parent="." instance=ExtResource("1")]
