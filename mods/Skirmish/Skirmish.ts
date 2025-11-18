@@ -510,7 +510,7 @@ function ReAssignSpectateCameras(removedPlayerID: number) {
 const SpectateMap = new Map<mod.Player, mod.Player>();
 
 function SetSpectateTarget(spectator: mod.Player, target: mod.Player) {
-    //mod.SetCameraTargetForPlayer(spectator, target);
+    mod.SetCameraTargetForPlayer(spectator, target);
     SpectateMap.set(spectator, target);
 }
 
@@ -1800,6 +1800,7 @@ class GS {
 
         mod.DisablePlayerJoin();
         mod.EnableAllPlayerDeploy(false);
+        mod.SetSpectateOnDeath(true)
         mod.SetSpawnMode(mod.SpawnModes.Spectating)
 
         if (GC.useCustomRingOfFire) {
@@ -2126,54 +2127,54 @@ const LOOT_POOLS = {
         throwables: [
             // Common - Basic utility throwables (3 items)
             [
-                mod.Gadgets.Throwable_Throwing_Knife, mod.Gadgets.Throwable_Flash_Grenade, mod.Gadgets.Throwable_Smoke_Grenade
+                mod.Throwables.ThrowingKnife, mod.Throwables.FlashGrenade, mod.Throwables.SmokeGrenade
             ],
             // Uncommon - Standard grenades (3 items)
             [
-                mod.Gadgets.Throwable_Fragmentation_Grenade, mod.Gadgets.Throwable_Stun_Grenade, mod.Gadgets.Throwable_Mini_Frag_Grenade
+                mod.Throwables.FragmentationGrenade, mod.Throwables.StunGrenade, mod.Throwables.MiniFragGrenade
             ],
             // Rare - Specialized throwables (3 items)
             [
-                mod.Gadgets.Throwable_Incendiary_Grenade, mod.Gadgets.Throwable_Proximity_Detector
+                mod.Throwables.IncendiaryGrenade, mod.Throwables.ThrowableMotionSensor
             ],
             // Epic - High damage throwables (2 items)
             [
-                mod.Gadgets.Throwable_Incendiary_Grenade
+                mod.Throwables.IncendiaryGrenade
             ],
             // Legendary - Most powerful throwables (1 item)
             [
-                mod.Gadgets.Throwable_Fragmentation_Grenade
+                mod.Throwables.FragmentationGrenade
             ]
         ],
         openGadgets: [
             // Common - Basic support equipment (8 items)
             [
-                mod.Gadgets.Class_Repair_Tool, mod.Gadgets.Deployable_Cover, mod.Gadgets.Misc_Supply_Pouch,
-                mod.Gadgets.Class_Motion_Sensor, mod.Gadgets.Misc_Sniper_Decoy, mod.Gadgets.Class_Adrenaline_Injector,
-                mod.Gadgets.Class_Supply_Bag, mod.Gadgets.Deployable_Deploy_Beacon
+                mod.OpenGadgets.RepairTool, mod.OpenGadgets.DeployableCover, mod.OpenGadgets.SupplyPouch,
+                mod.OpenGadgets.MotionSensor, mod.OpenGadgets.SniperDecoy, mod.OpenGadgets.AdrenalineInjector,
+                mod.OpenGadgets.SupplyBag, mod.OpenGadgets.DeployBeacon
             ],
             // Uncommon - Medical and detection gear (8 items)
             [
-                mod.Gadgets.Misc_Defibrillator, mod.Gadgets.Misc_Tracer_Dart,
-                mod.Gadgets.Deployable_Recon_Drone, mod.Gadgets.Misc_Laser_Designator, mod.Gadgets.Misc_Tripwire_Sensor_AV_Mine,
-                mod.Gadgets.Misc_Anti_Vehicle_Mine, mod.Gadgets.Deployable_Grenade_Intercept_System
+                mod.OpenGadgets.ArmorPlate, mod.OpenGadgets.Defibrillator, mod.OpenGadgets.TracerDart,
+                mod.OpenGadgets.ReconDrone, mod.OpenGadgets.LaserDesignator, mod.OpenGadgets.TripwireSensorMine,
+                mod.OpenGadgets.PressureMine, mod.OpenGadgets.GrenadeInterceptSystem
             ],
             // Rare - Advanced equipment and basic launchers (8 items)
             [
-                mod.Gadgets.Launcher_Unguided_Rocket, mod.Gadgets.Launcher_Long_Range,
-                mod.Gadgets.Misc_Acoustic_Sensor_AV_Mine, mod.Gadgets.Misc_Anti_Personnel_Mine,
-                mod.Gadgets.Launcher_Breaching_Projectile, mod.Gadgets.Misc_Demolition_Charge,
-                mod.Gadgets.Launcher_Smoke_Grenade, mod.Gadgets.Misc_Assault_Ladder
+                mod.OpenGadgets.UnguidedRocketLauncher, mod.OpenGadgets.LongRangeLauncher,
+                mod.OpenGadgets.MotionSensorMine, mod.OpenGadgets.AntiPersonnelMine,
+                mod.OpenGadgets.HandheldBreechingProjectileLauncher, mod.OpenGadgets.DemolitionCharge,
+                mod.OpenGadgets.SmokeGrenadeLauncher, mod.OpenGadgets.AssaultLadder
             ],
             // Epic - Heavy launchers and advanced systems (8 items)
             [
-                mod.Gadgets.Launcher_Aim_Guided, mod.Gadgets.Deployable_Portable_Mortar,
-                mod.Gadgets.Launcher_High_Explosive, mod.Gadgets.Launcher_Thermobaric_Grenade,
-                mod.Gadgets.Launcher_Auto_Guided, mod.Gadgets.Misc_Incendiary_Round_Shotgun
+                mod.OpenGadgets.AimGuidedLauncher, mod.OpenGadgets.PortableMortar,
+                mod.OpenGadgets.HighExplosiveLauncher, mod.OpenGadgets.ThermobaricGrenadeLauncher,
+                mod.OpenGadgets.AutoGuidedLauncher, mod.OpenGadgets.FlameRoundShotgun
             ],
             // Legendary - Top tier equipment and call-ins (6 items)
             [
-                mod.Gadgets.Deployable_EOD_Bot, mod.Gadgets.Launcher_Incendiary_Airburst
+                mod.OpenGadgets.EODBot, mod.OpenGadgets.IncendiaryAirburstWeaponSystem
            
             ]
         ],
@@ -4871,3 +4872,4 @@ class UIH {
         }, pp);
     }
 }
+

@@ -35,6 +35,12 @@
         },
         "theater": "Brooklyn"
     },
+    "MP_Eastwood": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "SouthernCalifornia"
+    },
     "MP_FireStorm": {
         "budget": {
             "physicsCostMax": 100000
@@ -59,6 +65,18 @@
         },
         "theater": "Tajikistan"
     },
+    "MP_Granite_MainStreet_Portal": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "SouthernCalifornia"
+    },
+    "MP_Granite_Marina_Portal": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "SouthernCalifornia"
+    },
     "MP_Granite_ClubHouse_Portal": {
         "budget": {
             "physicsCostMax": 100000
@@ -70,5 +88,11 @@
             "physicsCostMax": 100000
         },
         "theater": "SouthernCalifornia"
+    },
+    "MP_Portal_Sand": {
+        "budget": {
+            "physicsCostMax": 100000
+        },
+        "theater": "Portal"
     }
 }
